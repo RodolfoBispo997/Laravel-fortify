@@ -1,61 +1,71 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🔐 Laravel Fortify Auth System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto é um sistema de autenticação completo desenvolvido com **Laravel** e o pacote **Laravel Fortify**, utilizando o frontend com **Blade** e **Tailwind CSS**.
 
-## About Laravel
+O objetivo principal é implementar uma autenticação segura, moderna e configurável, com suporte a verificação de e-mail, redefinição de senha e autenticação em dois fatores (2FA).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 📝 Registro de usuário
+- 🔐 Login com validação
+- 🔁 Logout
+- 📧 Verificação de e-mail
+- 🔒 Autenticação em dois fatores (2FA)
+- 🔁 Redefinição de senha via e-mail
+- 🧑 Atualização de perfil e senha
+- ✅ Proteção com confirmação de senha em ações sensíveis
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🧰 Tecnologias utilizadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Laravel 11/12
+- Laravel Fortify
+- Blade (template engine)
+- Tailwind CSS
+- PHP 8.x
+- MySQL
+- Composer / NPM
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📁 Estrutura de Views Personalizadas
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+As rotas do Fortify foram personalizadas para usar views próprias:
 
-### Premium Partners
+- `login` → `resources/views/auth/login.blade.php`
+- `register` → `resources/views/auth/register.blade.php`
+- `forgot-password` → `resources/views/auth/forgot-password.blade.php`
+- `reset-password` → `resources/views/auth/reset-password.blade.php`
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## ⚙️ Como rodar o projeto localmente
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Clone o repositório
+git clone https://github.com/SEU-USUARIO/seu-repositorio.git
 
-## Code of Conduct
+# Acesse a pasta
+cd nome-do-projeto
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Instale as dependências
+composer install
 
-## Security Vulnerabilities
+# Instale os assets do frontend
+npm install && npm run dev
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Configure o banco de dados no .env
+# Ex: DB_DATABASE, DB_USERNAME, DB_PASSWORD
 
-## License
+# Dentro de database -> seeders -> DatabaseSeeder.php
+# Você pode criar o seu usuário ou seguir o fluxo normal de criação de usuário
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Rode as migrations
+php artisan migrate
+
+# Inicie o servidor
+php artisan serve
+Acesse em: http://localhost:8000
